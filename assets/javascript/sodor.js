@@ -63,13 +63,13 @@ database.ref().on("child_added", function (childSnapshot) {
 
     console.log("FirstTrain: " + firstTrain);
 
-    var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");  //to determine if first train of day has happened
+    var firstTrainRevised = moment(firstTrain, "HH:mm").subtract(1, "years");  //to determine if first train of day has happened
 
-    console.log("firstTrainConverted " + firstTrainConverted.format("HH:mm"));
+    console.log("firstTrainConverted " + firstTrainRevised.format("HH:mm"));
 
     console.log("Current Time: " + currentTime);
 
-    var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
+    var diffTime = moment().diff(moment(firstTrainRevised), "minutes");
 
     console.log("diffTime: " + diffTime);
 
